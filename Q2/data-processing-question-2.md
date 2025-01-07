@@ -6,7 +6,9 @@ tags: ['map','filter','tuple','sorting','expression','ord','chr','']
 # Problem Statement
 ## Implement the following function code 
 
-    If suppose you are given an `sentence` in an english language and an arbitrary ASCII value `k`.Sort and return the sentence based on the ASCII value of the characters. Now say let `x` be the count of charcters that are below or equal to k and `y` be the count of characters above k.
+    If suppose you are given an `sentence` in an english language and an arbitrary ASCII value `k`.
+    Sort and return the sentence based on the ASCII value of the characters. 
+    Now say let `x` be the count of charcters that are below or equal to k and `y` be the count of characters above k.
     return the sorted sentence along with the expression`x^2+y^2` in a tuple.
 
 Note: Use ord() function to get the ASCII value of a character.
@@ -88,6 +90,7 @@ sentence = "The quick brown fox jumps over the lazy dog"
 k = 111
 is_equal(data_processing(sentence,k),('        Tabcdeeefghhijklmnoooopqrrstuuvwxyz',1069))
 
+check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 
 ```
 
@@ -104,7 +107,7 @@ is_equal(data_processing(sentence,k),('        Tabcdeeefghhijklmnoooopqrrstuuvwx
 sentence = "IITM_is_a_prestigious_institue"
 k = 96
 is_equal(data_processing(sentence,k),("IIMT____aeegiiiiinoprsssstttuu",900)) 
-
+check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 ```
 
 ## Output 2
@@ -122,7 +125,7 @@ is_equal(data_processing(sentence,k),("IIMT____aeegiiiiinoprsssstttuu",900))
 sentence = "hello world"
 k = 110
 is_equal(data_processing(sentence,k),(' dehllloorw', 65))
-
+check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 ```
 
 ## Output 1
@@ -138,7 +141,7 @@ is_equal(data_processing(sentence,k),(' dehllloorw', 65))
 sentence = "Sorting123"
 k = 100
 is_equal(data_processing(sentence,k),('123Sginort', 58))
-
+check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 
 ```
 
@@ -155,7 +158,7 @@ is_equal(data_processing(sentence,k),('123Sginort', 58))
 sentence = "Python is Fun!"
 k = 105
 is_equal(data_processing(sentence,k),(' !FPFhinnostuy', 89))
-
+check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 
 ```
 

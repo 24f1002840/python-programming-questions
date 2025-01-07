@@ -38,6 +38,14 @@ def sort_sentence_by_ascii(sentence: str, k: int) -> tuple:
     return sorted_sentence, x**2 + y**2  # Return tuple
 
 # Example usage:
-sentence = "hello world"
-k = 110
-print(sort_sentence_by_ascii(sentence, k))  
+# sentence = "hello world"
+# k = 110
+# print(sort_sentence_by_ascii(sentence, k))  
+def func():
+    global data 
+    data = 'jalepenos'
+func()
+def func1():
+    print(data)
+func1()
+print("staurday",13880)
