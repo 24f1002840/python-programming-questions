@@ -12,7 +12,7 @@ tags: ['map','filter','tuple','sorting','expression','ord','chr','']
 Note: Use ord() function to get the ASCII value of a character.
 
 **example**
-'''py3
+```py3
 sentence = "The quick brown fox jumps over the lazy dog"
 k = 111
 data_processing(sentence,k) #returns ('        Tabcdeeefghhijklmnoooopqrrstuuvwxyz',1069)
@@ -20,7 +20,7 @@ data_processing(sentence,k) #returns ('        Tabcdeeefghhijklmnoooopqrrstuuvwx
 sentence = "IITM_is_a_prestigious_institue"
 k = 96
 data_processing(sentence,k) #returns ("IIMT____aeegiiiiinoprsssstttuu",900)
-'''
+```
 # Solution
 ```python test.py  -r 'python test.py'
 <prefix>

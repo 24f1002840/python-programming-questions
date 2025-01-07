@@ -13,33 +13,34 @@ tags: ['array','int','float','dict','type-conversion','rounding-float','truncate
     
 
 **Example**
-'''py3
+```py3
 Ingredients = ['Water','Soyabeans','Vitamin B12','Sugar']
 Allergen = 'Soyabeans'
 //returns True
-'''
-'''py3
+```
+```py3
 Ingredients = ['mushroom','vinegar','soup thickener','sugar']
 Allergen = 'peanuts'
 //returns False
-'''
+```
 **2. Inches to Centimeter Calculator**
     Convert the length of a room measured in inches to centimeter and then truncate the decimal value.
     --| 1 inch = 2.54 centimeters |--
 **Example**
-'''py3
+```py3
 inches_to_centi(1) #return 2
 inches_to_centi(10) #return 20
 inches_to_centi(-10) #return 0
-'''
+```
 **3. Min-Max-Avg of list of numbers**
     Find the `Minimum`,`Maximum` and `Avergae` of the list of numbers given and return a dictionary with the above as keys and their respected values.
     Note:- Round off the decimal to 2 places if necessary.
 **Example**
-'''py3
+```py3
 min_max_avg([12, 45, 78, 23, 56, 89]) #returns {"Minimum": 12, "Maximum": 89, "Average": 50.5}
 min_max_avg([1.5, 2.5, 3.5, 4.5, 5.5]) #returns {"Minimum": 1.5, "Maximum": 5.5, "Average": 3.5}
 min_max_avg([100]) #returns {"Minimum": 100, "Maximum": 100, "Average": 100.0}
+```
 # Solution
 ```python test.py  -r 'python test.py'
 <prefix>
