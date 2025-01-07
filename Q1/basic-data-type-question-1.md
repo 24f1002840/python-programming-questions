@@ -16,12 +16,12 @@ tags: ['array','int','float','dict','type-conversion','rounding-float','truncate
 ```py3
 Ingredients = ['Water','Soyabeans','Vitamin B12','Sugar']
 Allergen = 'Soyabeans'
-//returns True
+#returns True
 ```
 ```py3
 Ingredients = ['mushroom','vinegar','soup thickener','sugar']
 Allergen = 'peanuts'
-//returns False
+#returns False
 ```
 **2. Inches to Centimeter Calculator**
     Convert the length of a room measured in inches to centimeter and then truncate the decimal value.
