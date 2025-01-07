@@ -18,7 +18,7 @@ tags: ['pandas', 'groupby','aggregation','stdin','stdout']
     -- Total Sales
     -- Payment Method
 
-    the data is in csv format and the name of the file you must read is `starduck-sales-data.csv`
+    the data is in csv format read the data from stdin
 
     Answer the following questions by implementing the below functions
 
@@ -39,7 +39,8 @@ tags: ['pandas', 'groupby','aggregation','stdin','stdout']
         <sol>
         import pandas as pd
         global data
-        data = pd.read_csv('starduck-sales-data.csv')
+        data = input()
+        data = pd.read_csv(pd.compat.StringIO(data))
         </sol>
 
     def most_profitable_dotw():
@@ -79,6 +80,7 @@ tags: ['pandas', 'groupby','aggregation','stdin','stdout']
 
         
 </template>
+
 <suffix>
 #driver code
 import pandas as pd
@@ -87,9 +89,6 @@ most_profitable_dotw()
 highest_revenue_product()
 average_daily_revenue()
 frequent_payment_method()
-
-
-
 </suffix>
 
 ```
