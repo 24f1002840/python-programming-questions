@@ -20,7 +20,7 @@ tags: ['tic-tac-toe', 'file-handling','tsv','logic-building','loops']
 **example**
 ``` X   X	X	O	O	O	X	O	O --->  |X X X|
                                             |O O O|
-                                            |X O O|                                      
+                                            |X O O|  ```                                    
 # Solution
 ```python test.py  -r 'python test.py'
 
