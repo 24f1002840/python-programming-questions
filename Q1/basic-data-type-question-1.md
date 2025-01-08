@@ -37,9 +37,9 @@ inches_to_centi(-10) #return 0
     Note:- Round off the decimal to 2 places if necessary.
 **Example**
 ```py3
-stats([12, 45, 78, 23, 56, 89]) #returns {"Minimum": 12, "Maximum": 89, "Average": 50.5}
-stats([1.5, 2.5, 3.5, 4.5, 5.5]) #returns {"Minimum": 1.5, "Maximum": 5.5, "Average": 3.5}
-stats([100]) #returns {"Minimum": 100, "Maximum": 100, "Average": 100.0}
+stats([12, 45, 78, 23, 56, 89]) #returns "{'Average': 50.5, 'Maximum': 89 , 'Minimum': 12}"
+stats([1.5, 2.5, 3.5, 4.5, 5.5]) #returns "{'Average': 3.5 , 'Maximum': 5.5, 'Minimum': 1.5}"
+stats([100]) #returns "{'Average': 100, 'Maximum': 100, 'Minimum': 100}"
 ```
 # Solution
 ```python test.py  -r 'python test.py'
@@ -91,7 +91,7 @@ inches = 1
 is_equal(inches_to_centi(inches),2)
 
 numbers = [12, 45, 78, 23, 56, 89]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": 12, "Maximum": 89, "Average": 50.5}))
+is_equal(order_repr(stats(numbers)),"{'Average': 50.5, 'Maximum': 89, 'Minimum': 12}")
 
 
 check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
@@ -102,7 +102,7 @@ check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 True
 2
-{"Minimum": 12, "Maximum": 89, "Average": 50.5}
+"{'Average': 50.5, 'Maximum': 89, 'Minimum': 12}"
 ```
 
 
@@ -117,7 +117,7 @@ inches = 10
 is_equal(inches_to_centi(inches),25)
 
 numbers = [1.5, 2.5, 3.5, 4.5, 5.5]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": 1.5, "Maximum": 5.5, "Average": 3.5}))
+is_equal(order_repr(stats(numbers)),"{'Average': 3.5, 'Maximum': 5.5, 'Minimum': 1.5}")
 
 check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
@@ -127,7 +127,7 @@ check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 False
 25
-{"Minimum": 1.5, "Maximum": 5.5, "Average": 3.5}
+"{'Average': 3.5, 'Maximum': 5.5, 'Minimum': 1.5}"
 ```
 
 
@@ -142,7 +142,7 @@ inches = -10
 is_equal(inches_to_centi(inches),0)
 
 numbers = [100]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": 100, "Maximum": 100, "Average": 100.0}))
+is_equal(order_repr(stats(numbers)),"{'Average': 100.0, 'Maximum': 100, 'Minimum': 100}")
 
 check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
@@ -152,7 +152,7 @@ check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 True
 0
-{"Minimum": 100, "Maximum": 100, "Average": 100.0}
+"{'Average': 100.0, 'Maximum': 100, 'Minimum': 100}"
 
 ```
 
@@ -174,7 +174,7 @@ is_equal(inches_to_centi(inches),116)
 
 
 numbers = [-5, -10, 0, 5, 10]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": -10, "Maximum": 10, "Average": 0.0}))
+is_equal(order_repr(stats(numbers)),"{'Average': 0.0, 'Maximum': 10, 'Minimum': -10}")
 
 check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
@@ -184,7 +184,7 @@ check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 True
 116
-{"Minimum": -10, "Maximum": 10, "Average": 0.0}
+"{'Average': 0.0, 'Maximum': 10, 'Minimum': -10}"
 
 ```
 
@@ -199,7 +199,7 @@ inches = 100
 is_equal(inches_to_centi(inches),254)
 
 numbers = []
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": None, "Maximum": None, "Average": None}))
+is_equal(order_repr(stats(numbers)),"{'Average': None, 'Maximum': None, 'Minimum': None}")
 
 check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 
@@ -210,7 +210,7 @@ check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 False
 254
-{"Minimum": None, "Maximum": None, "Average": None}
+"{'Average': None, 'Maximum': None, 'Minimum': None}"
 
 ```
 
