@@ -20,7 +20,7 @@ tags: ['tic-tac-toe', 'file-handling','tsv','logic-building','loops']
 
 **example**
 
-```X    X   X   O	O	X	-	-	-  represents a board```   
+```XXXOOX---  represents a board```   
 ``` 
     |X X X|
     |O O X|
