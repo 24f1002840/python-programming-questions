@@ -7,7 +7,7 @@ tags: ['tic-tac-toe', 'file-handling','tsv','logic-building','loops']
 ## Tic-Tac-Toe Winner
     Two players `A` and `B` wanted to decide who is cooking tonight's dinner.So they played 80 tic-tac-toe games to decide it. 
     You are given a file with records of past games, now it is time to decide the winner. Consider the rules below.
-    
+
         > X was chosen by player A
         > O was chosen by player B
         > - represents an empty cell
@@ -18,7 +18,7 @@ tags: ['tic-tac-toe', 'file-handling','tsv','logic-building','loops']
 
     find the overall winner and the number of times he/she has won, return this in a tuple.if there is a draw between players return both the players and their corresponding win count.
 **example**
-```X    X	X	O	O	O	X	O	O --->  |X X X|
+``` X   X	X	O	O	O	X	O	O --->  |X X X|
                                             |O O O|
                                             |X O O|                                      
 # Solution
