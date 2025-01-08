@@ -88,8 +88,7 @@ tags: ['tic-tac-toe', 'file-handling','tsv','logic-building','loops']
 
 
 ```
-
-# Private Test Cases
+# Public Test Cases
 
 ## Input 1
 
@@ -182,6 +181,20 @@ O	X	X	X	X	O	X	X	X
 
 ```
 (A,42)
+```
+
+# Private Test Cases
+
+## Input 1
+
+```
+
+```
+
+## Output 1
+
+```
+
 ```
 
 

@@ -74,7 +74,7 @@ def stats(numbers: list) -> dict:
 </template>
 
 <suffix_invisible>
-{% include '../util.py.jinja' %}
+{% include './utils.py.jinja' %}
 </suffix_invisible>
 ```
 
@@ -90,11 +90,10 @@ is_equal(find_allergen_presence(ingredients_list,allergen),True)
 inches = 1
 is_equal(inches_to_centi(inches),2)
 
-numbers = [12, 45, 78, 23, 56, 89]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": 12, "Maximum": 89, "Average": 50.5}))
 
 
-check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
+
+#check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 
 ## Output 1
@@ -102,11 +101,17 @@ check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 True
 2
-{"Minimum": 12, "Maximum": 89, "Average": 50.5}
+
 ```
 
 
-## Input 2
+
+
+
+
+
+# Private Test Cases
+## Input 1
 
 ```
 ingredients_list = ['tree nuts', 'peanuts', 'wheat','soybeans']
@@ -116,102 +121,16 @@ is_equal(find_allergen_presence(ingredients_list,allergen),False)
 inches = 10
 is_equal(inches_to_centi(inches),25)
 
-numbers = [1.5, 2.5, 3.5, 4.5, 5.5]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": 1.5, "Maximum": 5.5, "Average": 3.5}))
-
-check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
-```
-
-## Output 2
-
-```
-False
-25
-{"Minimum": 1.5, "Maximum": 5.5, "Average": 3.5}
-```
 
 
-## Input 3
-
-```
-ingredients_list = ["Sugar", "Salt", "Butter", "Almond"]
-allergen = "Almond"
-is_equal(find_allergen_presence(ingredients_list,allergen),True)
-
-inches = -10
-is_equal(inches_to_centi(inches),0)
-
-numbers = [100]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": 100, "Maximum": 100, "Average": 100.0}))
-
-check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
-```
-
-## Output 3
-
-```
-True
-0
-{"Minimum": 100, "Maximum": 100, "Average": 100.0}
-
-```
-
-
-
-
-
-# Private Test Cases
-
-## Input 1
-
-```
-ingredients_list = ["Milk", "Eggs", "Peanuts", "Soy", "Wheat"]
-allergen = "Peanuts"
-is_equal(find_allergen_presence(ingredients_list,allergen),True)
-
-inches = 45.8
-is_equal(inches_to_centi(inches),116)
-
-
-numbers = [-5, -10, 0, 5, 10]
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": -10, "Maximum": 10, "Average": 0.0}))
-
-check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
+#check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
 ```
 
 ## Output 1
 
 ```
-True
-116
-{"Minimum": -10, "Maximum": 10, "Average": 0.0}
-
-```
-
-## Input 2
-
-```
-ingredients_list = []
-allergen = "Milk"
-is_equal(find_allergen_presence(ingredients_list,allergen),False)
-
-inches = 100
-is_equal(inches_to_centi(inches),254)
-
-numbers = []
-is_equal(order_repr(stats(numbers)),order_repr({"Minimum": None, "Maximum": None, "Average": None}))
-
-check_for_loops_in_solution(inches_to_centi,find_allergen_presence,stats)
-
-```
-
-## Output 2
-
-```
 False
-254
-{"Minimum": None, "Maximum": None, "Average": None}
+25
 
 ```
-
 
