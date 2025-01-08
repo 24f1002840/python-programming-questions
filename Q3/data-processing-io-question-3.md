@@ -34,48 +34,62 @@ tags: ['pandas', 'groupby','aggregation','stdin','stdout']
 
 </prefix>
 <template>
-    
-    def take_input():
-        <sol>
-        import pandas as pd
-        global data
-        data = input()
-        data = pd.read_csv(pd.compat.StringIO(data))
-        </sol>
 
-    def most_profitable_dotw():
-        <sol>
-        
-        day_sales = data.groupby('Day')['Total Sales'].sum()
-        most_profitable_day = day_sales.idxmax()
-        most_profitable_day_sales = day_sales.max()
-        print(most_profitable_day,most_profitable_day_sales)
-        </sol>
 
-    def highest_revenue_product():
-        <sol>
-        
-        product_sales = data.groupby('Product')['Total Sales'].sum()
-        highest_revenue_product = product_sales.idxmax()
-        highest_revenue = product_sales.max()
-        print(highest_revenue_product,highest_revenue)
-        </sol>
-    
-    def average_daily_revenue():
-        <sol>
-        total_sales = data['Total Sales'].sum()
-        unique_days = data['Date'].nunique()
-        average = total_sales / unique_days
-        print(average)
-        </sol>
-    def frequent_payment_method():
-        <sol>
-        payment_method_counts  = data['Payment Method'].value_counts()
-        most_frequent = payment_method_counts.idmax()
-        print(most_frequent)
-        </sol>
 
     
+
+def analyze_starduck_sales():
+    <sol>
+    import sys
+    import csv
+    from collections import defaultdict, Counter
+    # Read CSV data from stdin
+    csv_reader = csv.DictReader(sys.stdin)
+
+    # Data structures to store required information
+    day_sales = defaultdict(float)
+    product_sales = defaultdict(float)
+    payment_method_count = Counter()
+    daily_revenue = defaultdict(float)
+
+    # Process the CSV file row by row
+    for row in csv_reader:
+        day = row["Day"]
+        product = row["Product"]
+        payment_method = row["Payment Method"]
+        date = row["Date"]
+        total_sales = float(row["Total Sales"])
+
+        # Aggregate data
+        day_sales[day] += total_sales
+        product_sales[product] += total_sales
+        payment_method_count[payment_method] += 1
+        daily_revenue[date] += total_sales
+
+    # 1. Most profitable day and its revenue
+    most_profitable_day = max(day_sales, key=day_sales.get)
+    most_profitable_day_revenue = day_sales[most_profitable_day]
+
+    # 2. Most profitable product and its revenue
+    highest_revenue_product = max(product_sales, key=product_sales.get)
+    highest_revenue_product_sales = product_sales[highest_revenue_product]
+
+    # 3. Most frequently used payment method
+    most_frequent_payment_method = max(payment_method_count, key=payment_method_count.get)
+
+    # 4. Average daily revenue
+    average_daily_revenue = sum(daily_revenue.values()) / len(daily_revenue)
+
+    # Print results
+    print(f"{most_profitable_day} {most_profitable_day_revenue:.2f}")
+    print(f"{highest_revenue_product} {highest_revenue_product_sales:.2f}")
+    print(f"{average_daily_revenue:.2f}")
+    print(f"{most_frequent_payment_method}")
+    </sol>
+
+
+ 
 
 
         
@@ -83,12 +97,9 @@ tags: ['pandas', 'groupby','aggregation','stdin','stdout']
 
 <suffix>
 #driver code
-import pandas as pd
-take_input()
-most_profitable_dotw()
-highest_revenue_product()
-average_daily_revenue()
-frequent_payment_method()
+
+analyze_starduck_sales()
+
 </suffix>
 
 ```
@@ -137,6 +148,24 @@ Credit Card
 ## Input 1
 
 ```
+Date,Day,Product,Quantity,Price,Total Sales,Payment Method
+2024-01-01,Monday,Espresso,5,3.00,15.00,Credit Card
+2024-01-01,Monday,Cappuccino,3,4.50,13.50,Cash
+2024-01-01,Monday,Latte,7,5.00,35.00,UPI
+2024-01-02,Tuesday,Espresso,6,3.00,18.00,UPI
+2024-01-02,Tuesday,Americano,4,3.50,14.00,Credit Card
+2024-01-02,Tuesday,Latte,5,5.00,25.00,Cash
+2024-01-03,Wednesday,Mocha,8,5.50,44.00,Credit Card
+2024-01-03,Wednesday,Latte,10,5.00,50.00,UPI
+2024-01-04,Thursday,Cappuccino,4,4.50,18.00,Debit Card
+2024-01-04,Thursday,Espresso,5,3.00,15.00,Credit Card
+2024-01-05,Friday,Mocha,6,5.50,33.00,Cash
+2024-01-05,Friday,Latte,8,5.00,40.00,UPI
+2024-01-06,Saturday,Americano,9,3.50,31.50,Credit Card
+2024-01-06,Saturday,Cappuccino,6,4.50,27.00,UPI
+2024-01-07,Sunday,Mocha,10,5.50,55.00,Credit Card
+2024-01-07,Sunday,Espresso,7,3.00,21.00,Cash
+
 
 
 
@@ -145,6 +174,8 @@ Credit Card
 ## Output 1
 
 ```
-
-
+Wednesday 94.00
+Latte 150.00
+65.00
+Credit Card
 ```
