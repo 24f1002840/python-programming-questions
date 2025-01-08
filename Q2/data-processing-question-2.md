@@ -21,7 +21,7 @@ data_processing(sentence,k) #returns ('        Tabcdeeefghhijklmnoooopqrrstuuvwx
 
 sentence = "IITM_is_a_prestigious_institue"
 k = 96
-data_processing(sentence,k) #returns ("IIMT____aeegiiiiinoprsssstttuu",900)
+data_processing(sentence,k) #returns ("IIMT____aeegiiiiinoprsssstttuu",548)
 ```
 # Solution
 ```python test.py  -r 'python test.py'
