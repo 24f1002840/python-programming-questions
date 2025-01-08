@@ -17,11 +17,14 @@ tags: ['tic-tac-toe', 'file-handling','tsv','logic-building','loops']
     
 
     find the overall winner and the number of times he/she has won, return this in a tuple.if there is a draw between players return both the players and their corresponding win count.
+
 **example**
-``` X   X	X	O	O	O	X	O	O  represents a board```   
-``` |X X X|
-    |O O O|
-    |X O O|
+
+```X    X   X   O	O	X	-	-	-  represents a board```   
+``` 
+    |X X X|
+    |O O X|
+    |- - -|
 ```                          
 # Solution
 ```python test.py  -r 'python test.py'
