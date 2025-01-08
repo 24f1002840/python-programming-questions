@@ -36,29 +36,29 @@ def chr_to_ascii_map(chr_list:list)->list:
     </sol>
 def ascii_to_char_map(ascii_list:list)->list:
     <sol>
-    chr = list(map(lambda x: chr(x),ascii_list))
-    return chr
+    char = list(map(lambda x: chr(x),ascii_list))
+    return char
     </sol>
-def ascii_less_than_or_eq_k(ascii_list:list,k:int):int:
+def ascii_less_than_or_eq_k(ascii_list:list,k:int)->int:
     <sol>
     af = filter(lambda x : x<=k,ascii_list)
     af = list(af)
     res = len(af)
-    return af
+    return res
     </sol>
 def ascii_greater_than_k(ascii_list:list,k:int)->int:
     <sol>
     af = filter(lambda x : x>k,ascii_list)
     af = list(af)
     res = len(af)
-    return af
+    return res
     </sol>
 def ascii_sorted_string(ascii_list:list)->str:
     <sol>
     ascii_list.sort()
     ch = ascii_to_char_map(ascii_list)
     from functools import reduce
-    res = str(reduce(lambda x , y : x+y,ch))
+    res = str(reduce(lambda x,y : x+y,ch))
     return res
     </sol>
 
@@ -67,8 +67,10 @@ def data_processing(sentence:str,k:int)->tuple:
     sen_list = list(sentence)
     ascii_sen_list = chr_to_ascii_map(sen_list)
     sorted_string = ascii_sorted_string(ascii_sen_list)
-    x = ascii_less_than_or_eq_k(ascii_sen_list)
-    y = ascii_greater_than_k(ascii_sen_list)
+    ascii_sen_list = chr_to_ascii_map(sen_list)
+    x = ascii_less_than_or_eq_k(ascii_sen_list,k)
+    ascii_sen_list = chr_to_ascii_map(sen_list)
+    y = ascii_greater_than_k(ascii_sen_list,k)
     res = x**2+y**2
     return (sorted_string,res)
     </sol>
@@ -97,7 +99,7 @@ check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string
 ## Output 1
 
 ```
-('        Tabcdeeefghhijklmnoooopqrrstuuvwxyz',1069)
+('        Tabcdeeefghhijklmnoooopqrrstuuvwxyz', 1069)
 ```
 
 
@@ -106,14 +108,13 @@ check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string
 ```
 sentence = "IITM_is_a_prestigious_institue"
 k = 96
-is_equal(data_processing(sentence,k),("IIMT____aeegiiiiinoprsssstttuu",900)) 
+is_equal(data_processing(sentence,k),('IIMT____aeegiiiiinoprsssstttuu', 548)) 
 check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 ```
 
 ## Output 2
-
 ```
-("IIMT____aeegiiiiinoprsssstttuu",900)
+('IIMT____aeegiiiiinoprsssstttuu', 548)
 ```
 
 
@@ -140,7 +141,7 @@ check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string
 ```
 sentence = "Sorting123"
 k = 100
-is_equal(data_processing(sentence,k),('123Sginort', 58))
+is_equal(data_processing(sentence,k),('123Sginort', 52))
 check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 
 ```
@@ -148,7 +149,7 @@ check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string
 ## Output 2
 
 ```
-('123Sginort', 58)
+('123Sginort', 52)
 
 ```
 
@@ -157,7 +158,7 @@ check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string
 ```
 sentence = "Python is Fun!"
 k = 105
-is_equal(data_processing(sentence,k),(' !FPFhinnostuy', 89))
+is_equal(data_processing(sentence,k),('  !FPhinnostuy', 98))
 check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string,ascii_greater_than_k,ascii_less_than_or_eq_k,ascii_to_char_map)
 
 ```
@@ -165,7 +166,7 @@ check_for_loops_in_solution(chr_to_ascii_map,data_processing,ascii_sorted_string
 ## Output 3
 
 ```
-(' !FPFhinnostuy', 89)
+('  !FPhinnostuy', 98)
 
 ```
 
